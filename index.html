@@ -1,0 +1,1008 @@
+
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head><meta charset="UTF-8"><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(){this.triggerEvents=["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"],this.userEventHandler=this._triggerListener.bind(this),this.touchStartHandler=this._onTouchStart.bind(this),this.touchMoveHandler=this._onTouchMove.bind(this),this.touchEndHandler=this._onTouchEnd.bind(this),this.clickHandler=this._onClick.bind(this),this.interceptedClicks=[],window.addEventListener("pageshow",(e=>{this.persisted=e.persisted})),window.addEventListener("DOMContentLoaded",(()=>{this._preconnect3rdParties()})),this.delayedScripts={normal:[],async:[],defer:[]},this.allJQueries=[]}_addUserInteractionListener(e){document.hidden?e._triggerListener():(this.triggerEvents.forEach((t=>window.addEventListener(t,e.userEventHandler,{passive:!0}))),window.addEventListener("touchstart",e.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",e.touchStartHandler),document.addEventListener("visibilitychange",e.userEventHandler))}_removeUserInteractionListener(){this.triggerEvents.forEach((e=>window.removeEventListener(e,this.userEventHandler,{passive:!0}))),document.removeEventListener("visibilitychange",this.userEventHandler)}_onTouchStart(e){"HTML"!==e.target.tagName&&(window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),e.target.addEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"onclick","rocket-onclick"))}_onTouchMove(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick")}_onTouchEnd(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}_onClick(e){e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick"),this.interceptedClicks.push(e),e.preventDefault(),e.stopPropagation(),e.stopImmediatePropagation()}_replayClicks(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach((e=>{e.target.dispatchEvent(new MouseEvent("click",{view:e.view,bubbles:!0,cancelable:!0}))}))}_renameDOMAttribute(e,t,n){e.hasAttribute&&e.hasAttribute(t)&&(event.target.setAttribute(n,event.target.getAttribute(t)),event.target.removeAttribute(t))}_triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}_preconnect3rdParties(){let e=[];document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((t=>{if(t.hasAttribute("src")){const n=new URL(t.src).origin;n!==location.origin&&e.push({src:n,crossOrigin:t.crossOrigin||"module"===t.getAttribute("data-rocket-type")})}})),e=[...new Map(e.map((e=>[JSON.stringify(e),e]))).values()],this._batchInjectResourceHints(e,"preconnect")}async _loadEverythingNow(){this.lastBreath=Date.now(),this._delayEventListeners(),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async);try{await this._triggerDOMContentLoaded(),await this._triggerWindowLoad()}catch(e){}window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this._replayClicks()}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((e=>{e.hasAttribute("src")?e.hasAttribute("async")&&!1!==e.async?this.delayedScripts.async.push(e):e.hasAttribute("defer")&&!1!==e.defer||"module"===e.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(e):this.delayedScripts.normal.push(e):this.delayedScripts.normal.push(e)}))}async _transformScript(e){return await this._littleBreath(),new Promise((t=>{const n=document.createElement("script");[...e.attributes].forEach((e=>{let t=e.nodeName;"type"!==t&&("data-rocket-type"===t&&(t="type"),n.setAttribute(t,e.nodeValue))})),e.hasAttribute("src")?(n.addEventListener("load",t),n.addEventListener("error",t)):(n.text=e.text,t());try{e.parentNode.replaceChild(n,e)}catch(e){t()}}))}async _loadScriptsFromList(e){const t=e.shift();return t?(await this._transformScript(t),this._loadScriptsFromList(e)):Promise.resolve()}_preloadAllScripts(){this._batchInjectResourceHints([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}_batchInjectResourceHints(e,t){var n=document.createDocumentFragment();e.forEach((e=>{if(e.src){const i=document.createElement("link");i.href=e.src,i.rel=t,"preconnect"!==t&&(i.as="script"),e.getAttribute&&"module"===e.getAttribute("data-rocket-type")&&(i.crossOrigin=!0),e.crossOrigin&&(i.crossOrigin=e.crossOrigin),n.appendChild(i)}})),document.head.appendChild(n)}_delayEventListeners(){let e={};function t(t,n){!function(t){function n(n){return e[t].eventsToRewrite.indexOf(n)>=0?"rocket-"+n:n}e[t]||(e[t]={originalFunctions:{add:t.addEventListener,remove:t.removeEventListener},eventsToRewrite:[]},t.addEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.add.apply(t,arguments)},t.removeEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.remove.apply(t,arguments)})}(t),e[t].eventsToRewrite.push(n)}function n(e,t){let n=e[t];Object.defineProperty(e,t,{get:()=>n||function(){},set(i){e["rocket"+t]=n=i}})}t(document,"DOMContentLoaded"),t(window,"DOMContentLoaded"),t(window,"load"),t(window,"pageshow"),t(document,"readystatechange"),n(document,"onreadystatechange"),n(window,"onload"),n(window,"onpageshow")}_delayJQueryReady(e){let t=window.jQuery;Object.defineProperty(window,"jQuery",{get:()=>t,set(n){if(n&&n.fn&&!e.allJQueries.includes(n)){n.fn.ready=n.fn.init.prototype.ready=function(t){e.domReadyFired?t.bind(document)(n):document.addEventListener("rocket-DOMContentLoaded",(()=>t.bind(document)(n)))};const t=n.fn.on;n.fn.on=n.fn.init.prototype.on=function(){if(this[0]===window){function e(e){return e.split(" ").map((e=>"load"===e||0===e.indexOf("load.")?"rocket-jquery-load":e)).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=e(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{delete Object.assign(arguments[0],{[e(t)]:arguments[0][t]})[t]}))}return t.apply(this,arguments),this},e.allJQueries.push(n)}t=n}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._littleBreath(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._littleBreath(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._littleBreath(),window.dispatchEvent(new Event("rocket-load")),await this._littleBreath(),window.rocketonload&&window.rocketonload(),await this._littleBreath(),this.allJQueries.forEach((e=>e(window).trigger("rocket-jquery-load"))),await this._littleBreath();const e=new Event("rocket-pageshow");e.persisted=this.persisted,window.dispatchEvent(e),await this._littleBreath(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}_handleDocumentWrite(){const e=new Map;document.write=document.writeln=function(t){const n=document.currentScript,i=document.createRange(),r=n.parentElement;let o=e.get(n);void 0===o&&(o=n.nextSibling,e.set(n,o));const s=document.createDocumentFragment();i.setStart(s,0),s.appendChild(i.createContextualFragment(t)),r.insertBefore(s,o)}}async _littleBreath(){Date.now()-this.lastBreath>45&&(await this._requestAnimFrame(),this.lastBreath=Date.now())}async _requestAnimFrame(){return document.hidden?new Promise((e=>setTimeout(e))):new Promise((e=>requestAnimationFrame(e)))}static run(){const e=new RocketLazyLoadScripts;e._addUserInteractionListener(e)}}RocketLazyLoadScripts.run();</script>
+	
+			<title>Sinais Milionários 2.0 | Promocional</title><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Roboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto%20Slab%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CPoppins%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&#038;display=swap" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto%20Slab%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CPoppins%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&#038;display=swap" media="print" onload="this.media='all'" /><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto%20Slab%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CPoppins%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&#038;display=swap" /></noscript>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name='robots' content='max-image-preview:large' />
+<title>Sinais Milionários 2.0 | Promocional</title>
+<link href='https://fonts.gstatic.com' crossorigin rel='preconnect' />
+<link rel="alternate" type="application/rss+xml" title=" &raquo; Feed" href="https://sinaismilionarios.com.br/feed/" />
+<link rel="alternate" type="application/rss+xml" title=" &raquo; Feed de comentários" href="https://sinaismilionarios.com.br/comments/feed/" />
+<script type="rocketlazyloadscript">
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/sinaismilionarios.com.br\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.2.2"}};
+/*! This file is auto-generated */
+!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){p.clearRect(0,0,i.width,i.height),p.fillText(e,0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(t,0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(p&&p.fillText)switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s("\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!s("\ud83c\uddfa\ud83c\uddf3","\ud83c\uddfa\u200b\ud83c\uddf3")&&!s("\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!s("\ud83e\udef1\ud83c\udffb\u200d\ud83e\udef2\ud83c\udfff","\ud83e\udef1\ud83c\udffb\u200b\ud83e\udef2\ud83c\udfff")}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(e=t.source||{}).concatemoji?c(e.concatemoji):e.wpemoji&&e.twemoji&&(c(e.twemoji),c(e.wpemoji)))}(window,document,window._wpemojiSettings);
+</script>
+<style>
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<style id='wp-block-library-inline-css'>
+:root{--wp-admin-theme-color:#007cba;--wp-admin-theme-color--rgb:0,124,186;--wp-admin-theme-color-darker-10:#006ba1;--wp-admin-theme-color-darker-10--rgb:0,107,161;--wp-admin-theme-color-darker-20:#005a87;--wp-admin-theme-color-darker-20--rgb:0,90,135;--wp-admin-border-width-focus:2px;--wp-block-synced-color:#7a00df;--wp-block-synced-color--rgb:122,0,223}@media (-webkit-min-device-pixel-ratio:2),(min-resolution:192dpi){:root{--wp-admin-border-width-focus:1.5px}}.wp-element-button{cursor:pointer}:root{--wp--preset--font-size--normal:16px;--wp--preset--font-size--huge:42px}:root .has-very-light-gray-background-color{background-color:#eee}:root .has-very-dark-gray-background-color{background-color:#313131}:root .has-very-light-gray-color{color:#eee}:root .has-very-dark-gray-color{color:#313131}:root .has-vivid-green-cyan-to-vivid-cyan-blue-gradient-background{background:linear-gradient(135deg,#00d084,#0693e3)}:root .has-purple-crush-gradient-background{background:linear-gradient(135deg,#34e2e4,#4721fb 50%,#ab1dfe)}:root .has-hazy-dawn-gradient-background{background:linear-gradient(135deg,#faaca8,#dad0ec)}:root .has-subdued-olive-gradient-background{background:linear-gradient(135deg,#fafae1,#67a671)}:root .has-atomic-cream-gradient-background{background:linear-gradient(135deg,#fdd79a,#004a59)}:root .has-nightshade-gradient-background{background:linear-gradient(135deg,#330968,#31cdcf)}:root .has-midnight-gradient-background{background:linear-gradient(135deg,#020381,#2874fc)}.has-regular-font-size{font-size:1em}.has-larger-font-size{font-size:2.625em}.has-normal-font-size{font-size:var(--wp--preset--font-size--normal)}.has-huge-font-size{font-size:var(--wp--preset--font-size--huge)}.has-text-align-center{text-align:center}.has-text-align-left{text-align:left}.has-text-align-right{text-align:right}#end-resizable-editor-section{display:none}.aligncenter{clear:both}.items-justified-left{justify-content:flex-start}.items-justified-center{justify-content:center}.items-justified-right{justify-content:flex-end}.items-justified-space-between{justify-content:space-between}.screen-reader-text{clip:rect(1px,1px,1px,1px);word-wrap:normal!important;border:0;-webkit-clip-path:inset(50%);clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px}.screen-reader-text:focus{clip:auto!important;background-color:#ddd;-webkit-clip-path:none;clip-path:none;color:#444;display:block;font-size:1em;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}html :where(.has-border-color){border-style:solid}html :where([style*=border-top-color]){border-top-style:solid}html :where([style*=border-right-color]){border-right-style:solid}html :where([style*=border-bottom-color]){border-bottom-style:solid}html :where([style*=border-left-color]){border-left-style:solid}html :where([style*=border-width]){border-style:solid}html :where([style*=border-top-width]){border-top-style:solid}html :where([style*=border-right-width]){border-right-style:solid}html :where([style*=border-bottom-width]){border-bottom-style:solid}html :where([style*=border-left-width]){border-left-style:solid}html :where(img[class*=wp-image-]){height:auto;max-width:100%}figure{margin:0 0 1em}html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:var(--wp-admin--admin-bar--height,0px)}@media screen and (max-width:600px){html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:0px}}
+</style>
+<style id='global-styles-inline-css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--color--base: #ffffff;--wp--preset--color--contrast: #000000;--wp--preset--color--primary: #9DFF20;--wp--preset--color--secondary: #345C00;--wp--preset--color--tertiary: #F6F6F6;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: clamp(0.875rem, 0.875rem + ((1vw - 0.48rem) * 0.24), 1rem);--wp--preset--font-size--medium: clamp(1rem, 1rem + ((1vw - 0.48rem) * 0.24), 1.125rem);--wp--preset--font-size--large: clamp(1.75rem, 1.75rem + ((1vw - 0.48rem) * 0.24), 1.875rem);--wp--preset--font-size--x-large: 2.25rem;--wp--preset--font-size--xx-large: clamp(4rem, 4rem + ((1vw - 0.48rem) * 11.538), 10rem);--wp--preset--font-family--dm-sans: "DM Sans", sans-serif;--wp--preset--font-family--ibm-plex-mono: 'IBM Plex Mono', monospace;--wp--preset--font-family--inter: "Inter", sans-serif;--wp--preset--font-family--system-font: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;--wp--preset--font-family--source-serif-pro: "Source Serif Pro", serif;--wp--preset--spacing--30: clamp(1.5rem, 5vw, 2rem);--wp--preset--spacing--40: clamp(1.8rem, 1.8rem + ((1vw - 0.48rem) * 2.885), 3rem);--wp--preset--spacing--50: clamp(2.5rem, 8vw, 4.5rem);--wp--preset--spacing--60: clamp(3.75rem, 10vw, 7rem);--wp--preset--spacing--70: clamp(5rem, 5.25rem + ((1vw - 0.48rem) * 9.096), 8rem);--wp--preset--spacing--80: clamp(7rem, 14vw, 11rem);--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}body { margin: 0;--wp--style--global--content-size: 650px;--wp--style--global--wide-size: 1200px; }.wp-site-blocks { padding-top: var(--wp--style--root--padding-top); padding-bottom: var(--wp--style--root--padding-bottom); }.has-global-padding { padding-right: var(--wp--style--root--padding-right); padding-left: var(--wp--style--root--padding-left); }.has-global-padding :where(.has-global-padding) { padding-right: 0; padding-left: 0; }.has-global-padding > .alignfull { margin-right: calc(var(--wp--style--root--padding-right) * -1); margin-left: calc(var(--wp--style--root--padding-left) * -1); }.has-global-padding :where(.has-global-padding) > .alignfull { margin-right: 0; margin-left: 0; }.has-global-padding > .alignfull:where(:not(.has-global-padding)) > :where([class*="wp-block-"]:not(.alignfull):not([class*="__"]),p,h1,h2,h3,h4,h5,h6,ul,ol) { padding-right: var(--wp--style--root--padding-right); padding-left: var(--wp--style--root--padding-left); }.has-global-padding :where(.has-global-padding) > .alignfull:where(:not(.has-global-padding)) > :where([class*="wp-block-"]:not(.alignfull):not([class*="__"]),p,h1,h2,h3,h4,h5,h6,ul,ol) { padding-right: 0; padding-left: 0; }.wp-site-blocks > .alignleft { float: left; margin-right: 2em; }.wp-site-blocks > .alignright { float: right; margin-left: 2em; }.wp-site-blocks > .aligncenter { justify-content: center; margin-left: auto; margin-right: auto; }.wp-site-blocks > * { margin-block-start: 0; margin-block-end: 0; }.wp-site-blocks > * + * { margin-block-start: 1.5rem; }body { --wp--style--block-gap: 1.5rem; }body .is-layout-flow > *{margin-block-start: 0;margin-block-end: 0;}body .is-layout-flow > * + *{margin-block-start: 1.5rem;margin-block-end: 0;}body .is-layout-constrained > *{margin-block-start: 0;margin-block-end: 0;}body .is-layout-constrained > * + *{margin-block-start: 1.5rem;margin-block-end: 0;}body .is-layout-flex{gap: 1.5rem;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}body{background-color: var(--wp--preset--color--base);color: var(--wp--preset--color--contrast);font-family: var(--wp--preset--font-family--system-font);font-size: var(--wp--preset--font-size--medium);line-height: 1.6;--wp--style--root--padding-top: var(--wp--preset--spacing--40);--wp--style--root--padding-right: var(--wp--preset--spacing--30);--wp--style--root--padding-bottom: var(--wp--preset--spacing--40);--wp--style--root--padding-left: var(--wp--preset--spacing--30);}a:where(:not(.wp-element-button)){color: var(--wp--preset--color--contrast);text-decoration: underline;}a:where(:not(.wp-element-button)):hover{text-decoration: none;}a:where(:not(.wp-element-button)):focus{text-decoration: underline dashed;}a:where(:not(.wp-element-button)):active{color: var(--wp--preset--color--secondary);text-decoration: none;}h1, h2, h3, h4, h5, h6{font-weight: 400;line-height: 1.4;}h1{font-size: clamp(2.719rem, 2.719rem + ((1vw - 0.48rem) * 1.742), 3.625rem);line-height: 1.2;}h2{font-size: clamp(2.625rem, calc(2.625rem + ((1vw - 0.48rem) * 8.4135)), 3.25rem);line-height: 1.2;}h3{font-size: var(--wp--preset--font-size--x-large);}h4{font-size: var(--wp--preset--font-size--large);}h5{font-size: var(--wp--preset--font-size--medium);font-weight: 700;text-transform: uppercase;}h6{font-size: var(--wp--preset--font-size--medium);text-transform: uppercase;}.wp-element-button, .wp-block-button__link{background-color: var(--wp--preset--color--primary);border-radius: 0;border-width: 0;color: var(--wp--preset--color--contrast);font-family: inherit;font-size: inherit;line-height: inherit;padding: calc(0.667em + 2px) calc(1.333em + 2px);text-decoration: none;}.wp-element-button:visited, .wp-block-button__link:visited{color: var(--wp--preset--color--contrast);}.wp-element-button:hover, .wp-block-button__link:hover{background-color: var(--wp--preset--color--contrast);color: var(--wp--preset--color--base);}.wp-element-button:focus, .wp-block-button__link:focus{background-color: var(--wp--preset--color--contrast);color: var(--wp--preset--color--base);}.wp-element-button:active, .wp-block-button__link:active{background-color: var(--wp--preset--color--secondary);color: var(--wp--preset--color--base);}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-base-color{color: var(--wp--preset--color--base) !important;}.has-contrast-color{color: var(--wp--preset--color--contrast) !important;}.has-primary-color{color: var(--wp--preset--color--primary) !important;}.has-secondary-color{color: var(--wp--preset--color--secondary) !important;}.has-tertiary-color{color: var(--wp--preset--color--tertiary) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-base-background-color{background-color: var(--wp--preset--color--base) !important;}.has-contrast-background-color{background-color: var(--wp--preset--color--contrast) !important;}.has-primary-background-color{background-color: var(--wp--preset--color--primary) !important;}.has-secondary-background-color{background-color: var(--wp--preset--color--secondary) !important;}.has-tertiary-background-color{background-color: var(--wp--preset--color--tertiary) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-base-border-color{border-color: var(--wp--preset--color--base) !important;}.has-contrast-border-color{border-color: var(--wp--preset--color--contrast) !important;}.has-primary-border-color{border-color: var(--wp--preset--color--primary) !important;}.has-secondary-border-color{border-color: var(--wp--preset--color--secondary) !important;}.has-tertiary-border-color{border-color: var(--wp--preset--color--tertiary) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}.has-xx-large-font-size{font-size: var(--wp--preset--font-size--xx-large) !important;}.has-dm-sans-font-family{font-family: var(--wp--preset--font-family--dm-sans) !important;}.has-ibm-plex-mono-font-family{font-family: var(--wp--preset--font-family--ibm-plex-mono) !important;}.has-inter-font-family{font-family: var(--wp--preset--font-family--inter) !important;}.has-system-font-font-family{font-family: var(--wp--preset--font-family--system-font) !important;}.has-source-serif-pro-font-family{font-family: var(--wp--preset--font-family--source-serif-pro) !important;}
+</style>
+<style id='wp-webfonts-inline-css'>
+@font-face{font-family:"DM Sans";font-style:normal;font-weight:400;font-display:fallback;src:url('/wp-content/themes/twentytwentythree/assets/fonts/dm-sans/DMSans-Regular.woff2') format('woff2');font-stretch:normal;}@font-face{font-family:"DM Sans";font-style:italic;font-weight:400;font-display:fallback;src:url('/wp-content/themes/twentytwentythree/assets/fonts/dm-sans/DMSans-Regular-Italic.woff2') format('woff2');font-stretch:normal;}@font-face{font-family:"DM Sans";font-style:normal;font-weight:700;font-display:fallback;src:url('/wp-content/themes/twentytwentythree/assets/fonts/dm-sans/DMSans-Bold.woff2') format('woff2');font-stretch:normal;}@font-face{font-family:"DM Sans";font-style:italic;font-weight:700;font-display:fallback;src:url('/wp-content/themes/twentytwentythree/assets/fonts/dm-sans/DMSans-Bold-Italic.woff2') format('woff2');font-stretch:normal;}@font-face{font-family:"IBM Plex Mono";font-style:normal;font-weight:300;font-display:block;src:url('/wp-content/themes/twentytwentythree/assets/fonts/ibm-plex-mono/IBMPlexMono-Light.woff2') format('woff2');font-stretch:normal;}@font-face{font-family:"IBM Plex Mono";font-style:normal;font-weight:400;font-display:block;src:url('/wp-content/themes/twentytwentythree/assets/fonts/ibm-plex-mono/IBMPlexMono-Regular.woff2') format('woff2');font-stretch:normal;}@font-face{font-family:"IBM Plex Mono";font-style:italic;font-weight:400;font-display:block;src:url('/wp-content/themes/twentytwentythree/assets/fonts/ibm-plex-mono/IBMPlexMono-Italic.woff2') format('woff2');font-stretch:normal;}@font-face{font-family:"IBM Plex Mono";font-style:normal;font-weight:700;font-display:block;src:url('/wp-content/themes/twentytwentythree/assets/fonts/ibm-plex-mono/IBMPlexMono-Bold.woff2') format('woff2');font-stretch:normal;}@font-face{font-family:Inter;font-style:normal;font-weight:200 900;font-display:fallback;src:url('/wp-content/themes/twentytwentythree/assets/fonts/inter/Inter-VariableFont_slnt,wght.ttf') format('truetype');font-stretch:normal;}@font-face{font-family:"Source Serif Pro";font-style:normal;font-weight:200 900;font-display:fallback;src:url('/wp-content/themes/twentytwentythree/assets/fonts/source-serif-pro/SourceSerif4Variable-Roman.ttf.woff2') format('woff2');font-stretch:normal;}@font-face{font-family:"Source Serif Pro";font-style:italic;font-weight:200 900;font-display:fallback;src:url('/wp-content/themes/twentytwentythree/assets/fonts/source-serif-pro/SourceSerif4Variable-Italic.ttf.woff2') format('woff2');font-stretch:normal;}
+</style>
+<link rel='stylesheet' id='joinchat-css' href='https://sinaismilionarios.com.br/wp-content/plugins/creame-whatsapp-me/public/css/joinchat.min.css?ver=4.5.13' media='all' />
+<style id='joinchat-inline-css'>
+.joinchat{ --red:37; --green:211; --blue:102; }
+</style>
+<link data-minify="1" rel='stylesheet' id='jet-elements-css' href='https://sinaismilionarios.com.br/wp-content/cache/min/1/wp-content/plugins/jet-elements/assets/css/jet-elements.css?ver=1686855383' media='all' />
+<link data-minify="1" rel='stylesheet' id='jet-elements-skin-css' href='https://sinaismilionarios.com.br/wp-content/cache/min/1/wp-content/plugins/jet-elements/assets/css/jet-elements-skin.css?ver=1686855383' media='all' />
+<link data-minify="1" rel='stylesheet' id='elementor-icons-css' href='https://sinaismilionarios.com.br/wp-content/cache/min/1/wp-content/plugins/elementor/assets/lib/eicons/css/elementor-icons.min.css?ver=1686855383' media='all' />
+<link rel='stylesheet' id='elementor-animations-css' href='https://sinaismilionarios.com.br/wp-content/plugins/elementor/assets/lib/animations/animations.min.css?ver=3.1.4' media='all' />
+<link rel='stylesheet' id='elementor-frontend-css' href='https://sinaismilionarios.com.br/wp-content/plugins/elementor/assets/css/frontend.min.css?ver=3.1.4' media='all' />
+<link rel='stylesheet' id='elementor-post-13-css' href='https://sinaismilionarios.com.br/wp-content/uploads/elementor/css/post-13.css?ver=1669737476' media='all' />
+<link rel='stylesheet' id='elementor-pro-css' href='https://sinaismilionarios.com.br/wp-content/plugins/elementor-pro/assets/css/frontend.min.css?ver=3.2.1' media='all' />
+<link rel='stylesheet' id='elementor-global-css' href='https://sinaismilionarios.com.br/wp-content/uploads/elementor/css/global.css?ver=1669812068' media='all' />
+<link rel='stylesheet' id='elementor-post-43-css' href='https://sinaismilionarios.com.br/wp-content/uploads/elementor/css/post-43.css?ver=1684522669' media='all' />
+<style id='rocket-lazyload-inline-css'>
+.rll-youtube-player{position:relative;padding-bottom:56.23%;height:0;overflow:hidden;max-width:100%;}.rll-youtube-player:focus-within{outline: 2px solid currentColor;outline-offset: 5px;}.rll-youtube-player iframe{position:absolute;top:0;left:0;width:100%;height:100%;z-index:100;background:0 0}.rll-youtube-player img{bottom:0;display:block;left:0;margin:auto;max-width:100%;width:100%;position:absolute;right:0;top:0;border:none;height:auto;-webkit-transition:.4s all;-moz-transition:.4s all;transition:.4s all}.rll-youtube-player img:hover{-webkit-filter:brightness(75%)}.rll-youtube-player .play{height:100%;width:100%;left:0;top:0;position:absolute;background:url(https://sinaismilionarios.com.br/wp-content/plugins/wp-rocket/assets/img/youtube.png) no-repeat center;background-color: transparent !important;cursor:pointer;border:none;}.wp-embed-responsive .wp-has-aspect-ratio .rll-youtube-player{position:absolute;padding-bottom:0;width:100%;height:100%;top:0;bottom:0;left:0;right:0}
+</style>
+
+<link rel='stylesheet' id='elementor-icons-shared-0-css' href='https://sinaismilionarios.com.br/wp-content/plugins/elementor/assets/lib/font-awesome/css/fontawesome.min.css?ver=5.15.1' media='all' />
+<link data-minify="1" rel='stylesheet' id='elementor-icons-fa-solid-css' href='https://sinaismilionarios.com.br/wp-content/cache/min/1/wp-content/plugins/elementor/assets/lib/font-awesome/css/solid.min.css?ver=1686855383' media='all' />
+<script type="rocketlazyloadscript" src='https://sinaismilionarios.com.br/wp-includes/js/jquery/jquery.min.js?ver=3.6.4' id='jquery-core-js' defer></script>
+<script type="rocketlazyloadscript" src='https://sinaismilionarios.com.br/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.0' id='jquery-migrate-js' defer></script>
+<link rel="https://api.w.org/" href="https://sinaismilionarios.com.br/wp-json/" /><link rel="alternate" type="application/json" href="https://sinaismilionarios.com.br/wp-json/wp/v2/pages/43" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://sinaismilionarios.com.br/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://sinaismilionarios.com.br/wp-includes/wlwmanifest.xml" />
+<meta name="generator" content="WordPress 6.2.2" />
+<link rel="canonical" href="https://sinaismilionarios.com.br/promocional/" />
+<link rel='shortlink' href='https://sinaismilionarios.com.br/?p=43' />
+<link rel="alternate" type="application/json+oembed" href="https://sinaismilionarios.com.br/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fsinaismilionarios.com.br%2Fpromocional%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://sinaismilionarios.com.br/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fsinaismilionarios.com.br%2Fpromocional%2F&#038;format=xml" />
+<!-- HFCM by 99 Robots - Snippet # 2: Pixel SM 2.0 [Pag Vendas] -->
+
+<!-- /end HFCM by 99 Robots -->
+<link rel="icon" href="https://sinaismilionarios.com.br/wp-content/uploads/2022/11/Copia_de__GRUPOs_SHARK_NOVO___7_-removebg-preview-150x150.png" sizes="32x32" />
+<link rel="icon" href="https://sinaismilionarios.com.br/wp-content/uploads/2022/11/Copia_de__GRUPOs_SHARK_NOVO___7_-removebg-preview-300x300.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://sinaismilionarios.com.br/wp-content/uploads/2022/11/Copia_de__GRUPOs_SHARK_NOVO___7_-removebg-preview-300x300.png" />
+<meta name="msapplication-TileImage" content="https://sinaismilionarios.com.br/wp-content/uploads/2022/11/Copia_de__GRUPOs_SHARK_NOVO___7_-removebg-preview-300x300.png" />
+<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript>	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" /></head>
+<body data-rsssl=1 class="page-template page-template-elementor_canvas page page-id-43 wp-custom-logo wp-embed-responsive elementor-default elementor-template-canvas elementor-kit-13 elementor-page elementor-page-43">
+	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-dark-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 0.49803921568627" /><feFuncG type="table" tableValues="0 0.49803921568627" /><feFuncB type="table" tableValues="0 0.49803921568627" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-purple-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.54901960784314 0.98823529411765" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.71764705882353 0.25490196078431" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-blue-red"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 0.27843137254902" /><feFuncB type="table" tableValues="0.5921568627451 0.27843137254902" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-midnight"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 0" /><feFuncG type="table" tableValues="0 0.64705882352941" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-magenta-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.78039215686275 1" /><feFuncG type="table" tableValues="0 0.94901960784314" /><feFuncB type="table" tableValues="0.35294117647059 0.47058823529412" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-purple-green"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.65098039215686 0.40392156862745" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.44705882352941 0.4" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-blue-orange"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.098039215686275 1" /><feFuncG type="table" tableValues="0 0.66274509803922" /><feFuncB type="table" tableValues="0.84705882352941 0.41960784313725" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg>		<div data-elementor-type="wp-page" data-elementor-id="43" class="elementor elementor-43" data-elementor-settings="[]">
+							<div class="elementor-section-wrap">
+							<section class="elementor-section elementor-top-section elementor-element elementor-element-5351a560 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="5351a560" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;gradient&quot;,&quot;jet_parallax_layout_list&quot;:[]}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-4b486416" data-id="4b486416" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-5735a5a3 elementor-widget elementor-widget-heading" data-id="5735a5a3" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">OFERTA VÁLIDA APENAS HOJE!
+</h2>		</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-38c1d413 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="38c1d413" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;gradient&quot;,&quot;jet_parallax_layout_list&quot;:[]}">
+							<div class="elementor-background-overlay"></div>
+							<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-15c7890e" data-id="15c7890e" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-3e160e6 elementor-widget elementor-widget-image" data-id="3e160e6" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+										<img width="832" height="220" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20832%20220'%3E%3C/svg%3E" class="attachment-full size-full" alt="" decoding="async" data-lazy-srcset="https://sinaismilionarios.com.br/wp-content/uploads/2022/12/logo-3.png 832w, https://sinaismilionarios.com.br/wp-content/uploads/2022/12/logo-3-300x79.png 300w, https://sinaismilionarios.com.br/wp-content/uploads/2022/12/logo-3-768x203.png 768w" data-lazy-sizes="(max-width: 832px) 100vw, 832px" data-lazy-src="https://sinaismilionarios.com.br/wp-content/uploads/2022/12/logo-3.png" /><noscript><img width="832" height="220" src="https://sinaismilionarios.com.br/wp-content/uploads/2022/12/logo-3.png" class="attachment-full size-full" alt="" decoding="async" srcset="https://sinaismilionarios.com.br/wp-content/uploads/2022/12/logo-3.png 832w, https://sinaismilionarios.com.br/wp-content/uploads/2022/12/logo-3-300x79.png 300w, https://sinaismilionarios.com.br/wp-content/uploads/2022/12/logo-3-768x203.png 768w" sizes="(max-width: 832px) 100vw, 832px" /></noscript>											</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-7a9c1274 elementor-widget elementor-widget-heading" data-id="7a9c1274" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default"><span style="color: BLACK;background:#00D7FF;padding: 0 5px; border-radius:10px;">
+
+Revelado:</span>
+
+Meu método único para 
+
+<FONT COLOR="#00D7FF">
+lucrar todos os dias
+</FONT> 
+
+no mercado financeiro de forma consistente, sem ficar horas analisando gráficos!
+
+</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-4b77cfca elementor-widget elementor-widget-image" data-id="4b77cfca" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+										<img width="1024" height="274" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201024%20274'%3E%3C/svg%3E" class="attachment-large size-large" alt="" decoding="async" data-lazy-srcset="https://sinaismilionarios.com.br/wp-content/uploads/2022/12/008-1024x274.png 1024w, https://sinaismilionarios.com.br/wp-content/uploads/2022/12/008-300x80.png 300w, https://sinaismilionarios.com.br/wp-content/uploads/2022/12/008-768x205.png 768w, https://sinaismilionarios.com.br/wp-content/uploads/2022/12/008-1536x411.png 1536w, https://sinaismilionarios.com.br/wp-content/uploads/2022/12/008.png 1600w" data-lazy-sizes="(max-width: 1024px) 100vw, 1024px" data-lazy-src="https://sinaismilionarios.com.br/wp-content/uploads/2022/12/008-1024x274.png" /><noscript><img width="1024" height="274" src="https://sinaismilionarios.com.br/wp-content/uploads/2022/12/008-1024x274.png" class="attachment-large size-large" alt="" decoding="async" srcset="https://sinaismilionarios.com.br/wp-content/uploads/2022/12/008-1024x274.png 1024w, https://sinaismilionarios.com.br/wp-content/uploads/2022/12/008-300x80.png 300w, https://sinaismilionarios.com.br/wp-content/uploads/2022/12/008-768x205.png 768w, https://sinaismilionarios.com.br/wp-content/uploads/2022/12/008-1536x411.png 1536w, https://sinaismilionarios.com.br/wp-content/uploads/2022/12/008.png 1600w" sizes="(max-width: 1024px) 100vw, 1024px" /></noscript>											</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-7b4a88a8 elementor-widget elementor-widget-heading" data-id="7b4a88a8" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">VOCÊ RECEBERÁ MINHA SALA DE OPERAÇÕES DIÁRIAS!  LUCRE JUNTO COMIGO, VOU PEGAR NA SUA MÃO!</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-9bd28b5 elementor-mobile-align-center elementor-align-center elementor-widget elementor-widget-button" data-id="9bd28b5" data-element_type="widget" data-settings="{&quot;_animation_mobile&quot;:&quot;fadeInDown&quot;}" data-widget_type="button.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-button-wrapper">
+			<a href="#planos" class="elementor-button-link elementor-button elementor-size-sm" role="button">
+						<span class="elementor-button-content-wrapper">
+						<span class="elementor-button-text">QUERO LUCRAR COM OS SINAIS VIP</span>
+		</span>
+					</a>
+		</div>
+				</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-7415a7db elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="7415a7db" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;jet_parallax_layout_list&quot;:[]}">
+							<div class="elementor-background-overlay"></div>
+							<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-73eeec50" data-id="73eeec50" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<section class="elementor-section elementor-inner-section elementor-element elementor-element-4ad13b04 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="4ad13b04" data-element_type="section" data-settings="{&quot;jet_parallax_layout_list&quot;:[]}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-3ad3e6b0" data-id="3ad3e6b0" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-77f71f65 elementor-widget elementor-widget-heading" data-id="77f71f65" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">O QUE É ESSE
+
+
+<FONT COLOR="#00C2E7">MÉTODO 2.0 </FONT>
+?
+
+
+</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-41fe38e0 elementor-widget elementor-widget-image" data-id="41fe38e0" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+										<img width="150" height="200" decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20150%20200'%3E%3C/svg%3E" title="Copia_de__GRUPOs_SHARK_NOVO___7_-removebg-preview.png" alt="Copia_de__GRUPOs_SHARK_NOVO___7_-removebg-preview.png" data-lazy-src="https://sinaismilionarios.com.br/wp-content/uploads/elementor/thumbs/Copia_de__GRUPOs_SHARK_NOVO___7_-removebg-preview-pyogw2z9zs9nc1z6zr3806cig14o296gw0bcejrakw.png" /><noscript><img width="150" height="200" decoding="async" src="https://sinaismilionarios.com.br/wp-content/uploads/elementor/thumbs/Copia_de__GRUPOs_SHARK_NOVO___7_-removebg-preview-pyogw2z9zs9nc1z6zr3806cig14o296gw0bcejrakw.png" title="Copia_de__GRUPOs_SHARK_NOVO___7_-removebg-preview.png" alt="Copia_de__GRUPOs_SHARK_NOVO___7_-removebg-preview.png" /></noscript>											</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-1518d779 elementor-widget elementor-widget-text-editor" data-id="1518d779" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><p><strong> Os Sinais Milionários 2.0 é um Treinamento Completo que vai te levar do Zero ao Avançado no Mercado Financeiro.</strong></p><p><strong>Vou te ensinar tudo que precisa para Lucrar com esse Mercado apenas com Um Método Único que desenvolvi.</strong></p><p><strong>Apenas com o seu Celular você irá baixar um aplicativo da Corretora e Copiar e Colar Minhas Operações enviadas em Minha Sala VIP. </strong></p></div>
+				</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-53e024cc" data-id="53e024cc" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-6444ea53 elementor-widget elementor-widget-heading" data-id="6444ea53" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">SALA DE
+
+
+<FONT COLOR="#00C2E7">SINAIS VIP </FONT>
+
+</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-79eb4655 elementor-widget elementor-widget-image" data-id="79eb4655" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+										<img width="500" height="500" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20500%20500'%3E%3C/svg%3E" class="attachment-full size-full" alt="" decoding="async" data-lazy-srcset="https://sinaismilionarios.com.br/wp-content/uploads/2022/12/RESULTADOS_ELEMENTOR__4_-removebg-preview.png 500w, https://sinaismilionarios.com.br/wp-content/uploads/2022/12/RESULTADOS_ELEMENTOR__4_-removebg-preview-300x300.png 300w, https://sinaismilionarios.com.br/wp-content/uploads/2022/12/RESULTADOS_ELEMENTOR__4_-removebg-preview-150x150.png 150w" data-lazy-sizes="(max-width: 500px) 100vw, 500px" data-lazy-src="https://sinaismilionarios.com.br/wp-content/uploads/2022/12/RESULTADOS_ELEMENTOR__4_-removebg-preview.png" /><noscript><img width="500" height="500" src="https://sinaismilionarios.com.br/wp-content/uploads/2022/12/RESULTADOS_ELEMENTOR__4_-removebg-preview.png" class="attachment-full size-full" alt="" decoding="async" srcset="https://sinaismilionarios.com.br/wp-content/uploads/2022/12/RESULTADOS_ELEMENTOR__4_-removebg-preview.png 500w, https://sinaismilionarios.com.br/wp-content/uploads/2022/12/RESULTADOS_ELEMENTOR__4_-removebg-preview-300x300.png 300w, https://sinaismilionarios.com.br/wp-content/uploads/2022/12/RESULTADOS_ELEMENTOR__4_-removebg-preview-150x150.png 150w" sizes="(max-width: 500px) 100vw, 500px" /></noscript>											</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-62315a5a elementor-widget elementor-widget-text-editor" data-id="62315a5a" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><p><strong>Sempre quando vou fazer uma operação, mando todos os detalhes dela nessa Sala VIP (AO VIVO). Você pode simplesmente Copiar e Colar.&nbsp;</strong></p>
+<p><strong>Você receberá também Lives Diárias, só é preciso clicar nos botões Pra Cima (Compra) e Pra Baixo (Venda) quando eu mandar, enquanto assiste minhas operações ao vivo.</strong></p></div>
+				</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+					</div>
+		</div>
+							</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-507586b5 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="507586b5" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;gradient&quot;,&quot;jet_parallax_layout_list&quot;:[]}">
+							<div class="elementor-background-overlay"></div>
+							<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-129b9698" data-id="129b9698" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-4effe0d4 elementor-widget elementor-widget-heading" data-id="4effe0d4" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default"><FONT COLOR="#00D7FF">Resultados reais
+</FONT> dos alunos
+
+</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-672a75e0 elementor-widget elementor-widget-heading" data-id="672a75e0" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Veja o Relato dos Meus Alunos que Lucram Diariamente com Meus Sinais VIP!</h2>		</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-27874b4c elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="27874b4c" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;gradient&quot;,&quot;jet_parallax_layout_list&quot;:[]}">
+							<div class="elementor-background-overlay"></div>
+							<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-307a7699" data-id="307a7699" data-element_type="column">
+			<div class="elementor-widget-wrap">
+									</div>
+		</div>
+				<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-7dcb1850" data-id="7dcb1850" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-c2ce3eb elementor-widget elementor-widget-gallery" data-id="c2ce3eb" data-element_type="widget" data-settings="{&quot;columns_mobile&quot;:3,&quot;gap_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:7,&quot;sizes&quot;:[]},&quot;aspect_ratio&quot;:&quot;9:16&quot;,&quot;columns&quot;:3,&quot;gap&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:8,&quot;sizes&quot;:[]},&quot;lazyload&quot;:&quot;yes&quot;,&quot;gallery_layout&quot;:&quot;grid&quot;,&quot;columns_tablet&quot;:2,&quot;gap_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:10,&quot;sizes&quot;:[]},&quot;link_to&quot;:&quot;file&quot;,&quot;overlay_background&quot;:&quot;yes&quot;,&quot;content_hover_animation&quot;:&quot;fade-in&quot;}" data-widget_type="gallery.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-gallery__container">
+							<a class="e-gallery-item elementor-gallery-item elementor-animated-content" href="https://sinaismilionarios.com.br/wp-content/uploads/2022/12/photo1670335459.jpeg" data-elementor-open-lightbox="yes" data-elementor-lightbox-slideshow="all-c2ce3eb" data-elementor-lightbox-title="photo1670335459">
+					<div class="e-gallery-image elementor-gallery-item__image" data-thumbnail="https://sinaismilionarios.com.br/wp-content/uploads/2022/12/photo1670335459.jpeg" data-width="591" data-height="1280" alt="" ></div>
+										<div class="elementor-gallery-item__overlay"></div>
+														</a>
+							<a class="e-gallery-item elementor-gallery-item elementor-animated-content" href="https://sinaismilionarios.com.br/wp-content/uploads/2022/12/photo1670333929.jpeg" data-elementor-open-lightbox="yes" data-elementor-lightbox-slideshow="all-c2ce3eb" data-elementor-lightbox-title="photo1670333929">
+					<div class="e-gallery-image elementor-gallery-item__image" data-thumbnail="https://sinaismilionarios.com.br/wp-content/uploads/2022/12/photo1670333929.jpeg" data-width="591" data-height="1280" alt="" ></div>
+										<div class="elementor-gallery-item__overlay"></div>
+														</a>
+							<a class="e-gallery-item elementor-gallery-item elementor-animated-content" href="https://sinaismilionarios.com.br/wp-content/uploads/2022/12/photo1670335440.jpeg" data-elementor-open-lightbox="yes" data-elementor-lightbox-slideshow="all-c2ce3eb" data-elementor-lightbox-title="photo1670335440">
+					<div class="e-gallery-image elementor-gallery-item__image" data-thumbnail="https://sinaismilionarios.com.br/wp-content/uploads/2022/12/photo1670335440.jpeg" data-width="591" data-height="1280" alt="" ></div>
+										<div class="elementor-gallery-item__overlay"></div>
+														</a>
+							<a class="e-gallery-item elementor-gallery-item elementor-animated-content" href="https://sinaismilionarios.com.br/wp-content/uploads/2022/12/photo1670333895.jpeg" data-elementor-open-lightbox="yes" data-elementor-lightbox-slideshow="all-c2ce3eb" data-elementor-lightbox-title="photo1670333895">
+					<div class="e-gallery-image elementor-gallery-item__image" data-thumbnail="https://sinaismilionarios.com.br/wp-content/uploads/2022/12/photo1670333895.jpeg" data-width="591" data-height="1280" alt="" ></div>
+										<div class="elementor-gallery-item__overlay"></div>
+														</a>
+							<a class="e-gallery-item elementor-gallery-item elementor-animated-content" href="https://sinaismilionarios.com.br/wp-content/uploads/2022/12/photo1670333911.jpeg" data-elementor-open-lightbox="yes" data-elementor-lightbox-slideshow="all-c2ce3eb" data-elementor-lightbox-title="photo1670333911">
+					<div class="e-gallery-image elementor-gallery-item__image" data-thumbnail="https://sinaismilionarios.com.br/wp-content/uploads/2022/12/photo1670333911.jpeg" data-width="591" data-height="1280" alt="" ></div>
+										<div class="elementor-gallery-item__overlay"></div>
+														</a>
+							<a class="e-gallery-item elementor-gallery-item elementor-animated-content" href="https://sinaismilionarios.com.br/wp-content/uploads/2022/12/photo1670333876.jpeg" data-elementor-open-lightbox="yes" data-elementor-lightbox-slideshow="all-c2ce3eb" data-elementor-lightbox-title="photo1670333876">
+					<div class="e-gallery-image elementor-gallery-item__image" data-thumbnail="https://sinaismilionarios.com.br/wp-content/uploads/2022/12/photo1670333876.jpeg" data-width="591" data-height="1280" alt="" ></div>
+										<div class="elementor-gallery-item__overlay"></div>
+														</a>
+					</div>
+			</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-64b223b2" data-id="64b223b2" data-element_type="column">
+			<div class="elementor-widget-wrap">
+									</div>
+		</div>
+							</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-16661367 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="16661367" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;gradient&quot;,&quot;jet_parallax_layout_list&quot;:[]}">
+							<div class="elementor-background-overlay"></div>
+							<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-16349ed5" data-id="16349ed5" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-11d096d4 elementor-widget elementor-widget-heading" data-id="11d096d4" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">PORQUE CRIEI OS <FONT COLOR="#00D7FF">SINAIS MILIONÁRIOS 2.0
+</FONT>
+?
+
+</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-57759c37 elementor-widget elementor-widget-text-editor" data-id="57759c37" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><p><strong>Sempre fui uma pessoa fora da curva, fui contra tudo que diziam e larguei a faculdade para tentar fazer algo novo. </strong></p><p><strong>Mesmo sem nenhum diploma, consegui me tornar um dos maiores especialistas no mercado financeiro do Brasil.</strong></p><p><strong>E decidi criar os Sinais Milionários 2.0 para revelar os segredos por trás dos meus resultados no mercado financeiro. Não vou esconder nada, irei abrir a caixa preta e te mostrar o que faço para ganhar dinheiro, apenas com um Método Simples e Prático, onde você só vai precisar ter um celular em mãos e copiar e colar minhas operações ao vivo.</strong></p></div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-3b09d06 elementor-mobile-align-center elementor-align-center elementor-widget elementor-widget-button" data-id="3b09d06" data-element_type="widget" data-widget_type="button.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-button-wrapper">
+			<a href="#planos" class="elementor-button-link elementor-button elementor-size-sm" role="button">
+						<span class="elementor-button-content-wrapper">
+						<span class="elementor-button-text">QUERO LUCRAR COM SEUS SINAIS</span>
+		</span>
+					</a>
+		</div>
+				</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-3dca373a elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="3dca373a" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;gradient&quot;,&quot;jet_parallax_layout_list&quot;:[]}">
+							<div class="elementor-background-overlay"></div>
+							<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-23a0ddb4" data-id="23a0ddb4" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-6bc1db8f elementor-widget elementor-widget-heading" data-id="6bc1db8f" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Veja tudo que você vai receber:
+</h2>		</div>
+				</div>
+				<section class="elementor-section elementor-inner-section elementor-element elementor-element-3b32acdd elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="3b32acdd" data-element_type="section" data-settings="{&quot;jet_parallax_layout_list&quot;:[]}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-4e1ce79b" data-id="4e1ce79b" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-61575266 elementor-widget elementor-widget-heading" data-id="61575266" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">01</h2>		</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-7460cbc5" data-id="7460cbc5" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-1b5f8fc6 elementor-widget elementor-widget-heading" data-id="1b5f8fc6" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Como funciona o mercado
+</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-3d50b487 elementor-widget elementor-widget-text-editor" data-id="3d50b487" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><p><strong>Vou te passar uma visão geral sobre como tudo isso funciona e de onde vem esses lucros exorbitantes que você vê. </strong></p></div>
+				</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+				<section class="elementor-section elementor-inner-section elementor-element elementor-element-6f47ae77 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="6f47ae77" data-element_type="section" data-settings="{&quot;jet_parallax_layout_list&quot;:[]}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-64208457" data-id="64208457" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-434b2b24 elementor-widget elementor-widget-heading" data-id="434b2b24" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">02</h2>		</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-cd99f93" data-id="cd99f93" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-5c56c174 elementor-widget elementor-widget-heading" data-id="5c56c174" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Qual a lógica por trás do método
+</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-1400a0a3 elementor-widget elementor-widget-text-editor" data-id="1400a0a3" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><p><strong>Vou abrir a caixa preta e te revelar qual a linha racional e matemática por trás do meu método para ele me gerar lucro todos os dias, de forma consistente.</strong></p></div>
+				</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+				<section class="elementor-section elementor-inner-section elementor-element elementor-element-7dc95b45 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="7dc95b45" data-element_type="section" data-settings="{&quot;jet_parallax_layout_list&quot;:[]}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-22df4d37" data-id="22df4d37" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-281e0f3f elementor-widget elementor-widget-heading" data-id="281e0f3f" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">03</h2>		</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-4a00a07c" data-id="4a00a07c" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-289210cf elementor-widget elementor-widget-heading" data-id="289210cf" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Nosso gerenciamento único 
+</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-33ebbebb elementor-widget elementor-widget-text-editor" data-id="33ebbebb" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><p><strong>Irei te revelar os segredos do nosso gerenciamento milionário que eu mesmo desenvolvi por vários anos.</strong></p></div>
+				</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+				<section class="elementor-section elementor-inner-section elementor-element elementor-element-21623b8a elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="21623b8a" data-element_type="section" data-settings="{&quot;jet_parallax_layout_list&quot;:[]}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-70c83e1e" data-id="70c83e1e" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-76751178 elementor-widget elementor-widget-heading" data-id="76751178" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">04</h2>		</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-61ede4e" data-id="61ede4e" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-65cbaafb elementor-widget elementor-widget-heading" data-id="65cbaafb" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">A melhor forma de começar do absoluto zero sendo iniciante
+</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-63b85f1b elementor-widget elementor-widget-text-editor" data-id="63b85f1b" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><p><strong>Irei te mostrar o mapa ideal para você que está começando do absoluto zero e é um total iniciante no mercado financeiro.</strong></p></div>
+				</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+				<section class="elementor-section elementor-inner-section elementor-element elementor-element-786cbb86 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="786cbb86" data-element_type="section" data-settings="{&quot;jet_parallax_layout_list&quot;:[]}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-f414516" data-id="f414516" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-1a54b9bb elementor-widget elementor-widget-heading" data-id="1a54b9bb" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">05</h2>		</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-1d1540e2" data-id="1d1540e2" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-41d8486 elementor-widget elementor-widget-heading" data-id="41d8486" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">COMO DETERMINAR O MOVIMENTO DO MERCADO COM PRICE ACTION
+</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-470de9f5 elementor-widget elementor-widget-text-editor" data-id="470de9f5" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><p><strong>Vou te explicar do absoluto zero o funcionamento do chamado Price Action (Ação do Preço) que determina o movimento do mercado com tendências, suportes, resistências, zonas..</strong></p></div>
+				</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+					</div>
+		</div>
+							</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-5fb11dfe elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="5fb11dfe" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;gradient&quot;,&quot;jet_parallax_layout_list&quot;:[]}">
+							<div class="elementor-background-overlay"></div>
+							<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-70b47633" data-id="70b47633" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-4ff653e9 elementor-widget elementor-widget-heading" data-id="4ff653e9" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Calma, ainda não acabou! Tenho alguns bônus para te dar...</h2>		</div>
+				</div>
+				<section class="elementor-section elementor-inner-section elementor-element elementor-element-2563b363 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="2563b363" data-element_type="section" data-settings="{&quot;jet_parallax_layout_list&quot;:[]}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-51b51924" data-id="51b51924" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;gradient&quot;}">
+			<div class="elementor-widget-wrap elementor-element-populated">
+					<div class="elementor-background-overlay"></div>
+								<div class="elementor-element elementor-element-6d810876 elementor-view-default elementor-widget elementor-widget-icon" data-id="6d810876" data-element_type="widget" data-widget_type="icon.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-icon-wrapper">
+			<div class="elementor-icon">
+			<i aria-hidden="true" class="fas fa-gift"></i>			</div>
+		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-29648af5 elementor-widget elementor-widget-heading" data-id="29648af5" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">SUPER <FONT COLOR="#00C2E7">BÔNUS 01
+</FONT>
+
+</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-6d66c287 elementor-widget elementor-widget-heading" data-id="6d66c287" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Acesso Vitalício ao Meu Treinamento e Sala de Sinais VIP!
+</h2>		</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-607490d4" data-id="607490d4" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;gradient&quot;}">
+			<div class="elementor-widget-wrap elementor-element-populated">
+					<div class="elementor-background-overlay"></div>
+								<div class="elementor-element elementor-element-4b4c3b6c elementor-view-default elementor-widget elementor-widget-icon" data-id="4b4c3b6c" data-element_type="widget" data-widget_type="icon.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-icon-wrapper">
+			<div class="elementor-icon">
+			<i aria-hidden="true" class="fas fa-gift"></i>			</div>
+		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-22109d43 elementor-widget elementor-widget-heading" data-id="22109d43" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">SUPER <FONT COLOR="#00C2E7">BÔNUS 02
+</FONT>
+
+</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-672e30ac elementor-widget elementor-widget-heading" data-id="672e30ac" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Acompanhamento Exclusivo pelo Whatsapp</h2>		</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+					</div>
+		</div>
+							</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-213f3002 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="213f3002" data-element_type="section" id="xs_pricing_2" data-settings="{&quot;background_background&quot;:&quot;gradient&quot;,&quot;jet_parallax_layout_list&quot;:[]}">
+							<div class="elementor-background-overlay"></div>
+							<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-400d3edd" data-id="400d3edd" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<section class="elementor-section elementor-inner-section elementor-element elementor-element-4640f954 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="4640f954" data-element_type="section" data-settings="{&quot;jet_parallax_layout_list&quot;:[]}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-7dd78571" data-id="7dd78571" data-element_type="column">
+			<div class="elementor-widget-wrap">
+									</div>
+		</div>
+				<div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-1a8248dd" data-id="1a8248dd" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-32835683 elementor-widget elementor-widget-heading" data-id="32835683" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">PLANOS <FONT COLOR="#00D7FF">PROMOCIONAIS
+</FONT>
+
+</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-59211d58 elementor-widget elementor-widget-price-table" data-id="59211d58" data-element_type="widget" data-settings="{&quot;_animation_mobile&quot;:&quot;none&quot;,&quot;_animation&quot;:&quot;none&quot;}" data-widget_type="price-table.default">
+				<div class="elementor-widget-container">
+			
+		<div class="elementor-price-table">
+							<div class="elementor-price-table__header">
+											<h5 class="elementor-price-table__heading">PLANO MENSAL</h5>
+					
+											<span class="elementor-price-table__subheading">[ OFERTA VÁLIDA APENAS HOJE ]</span>
+									</div>
+			
+			<div class="elementor-price-table__price">
+									<div class="elementor-price-table__original-price elementor-typo-excluded">R$197</div>
+								<span class="elementor-price-table__currency elementor-currency--before">R$</span>									<span class="elementor-price-table__integer-part">12x 9,74</span>
+				
+				
+				
+									<span class="elementor-price-table__period elementor-typo-excluded">ou R$97,00 à vista</span>							</div>
+
+							<ul class="elementor-price-table__features-list">
+											<li class="elementor-repeater-item-5b11508">
+							<div class="elementor-price-table__feature-inner">
+								<i aria-hidden="true" class="fas fa-check"></i>																	<span >
+										Acesso Mensal a Sala VIP									</span>
+																</div>
+						</li>
+											<li class="elementor-repeater-item-7b2982b">
+							<div class="elementor-price-table__feature-inner">
+								<i aria-hidden="true" class="fas fa-check"></i>																	<span >
+										Treinamento do Zero ao Avançado									</span>
+																</div>
+						</li>
+											<li class="elementor-repeater-item-4b5a876">
+							<div class="elementor-price-table__feature-inner">
+								<i aria-hidden="true" class="fas fa-check"></i>																	<span >
+										Lives de Sinais Diarias 									</span>
+																</div>
+						</li>
+											<li class="elementor-repeater-item-7fce622">
+							<div class="elementor-price-table__feature-inner">
+								<i aria-hidden="true" class="fas fa-check"></i>																	<span >
+										+70 Sinais VIP por Dia									</span>
+																</div>
+						</li>
+											<li class="elementor-repeater-item-63857be">
+							<div class="elementor-price-table__feature-inner">
+								<i aria-hidden="true" class="fas fa-check"></i>																	<span >
+										Acompanhamento no Whatsapp 24hrs									</span>
+																</div>
+						</li>
+									</ul>
+			
+							<div class="elementor-price-table__footer">
+											<a class="elementor-price-table__button elementor-button elementor-size-sm elementor-animation-grow" href="http://mon.net.br/2bd0or?src=SM97">ADQUIRIR MENSAL</a>
+					
+									</div>
+					</div>
+
+					<div class="elementor-price-table__ribbon elementor-ribbon-right">
+				<div class="elementor-price-table__ribbon-inner">50% OFF</div>
+			</div>
+					</div>
+				</div>
+				<div class="elementor-element elementor-element-740c2435 elementor-widget elementor-widget-menu-anchor" data-id="740c2435" data-element_type="widget" data-widget_type="menu-anchor.default">
+				<div class="elementor-widget-container">
+					<div id="planos" class="elementor-menu-anchor"></div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-62f49159 elementor-invisible elementor-widget elementor-widget-price-table" data-id="62f49159" data-element_type="widget" data-settings="{&quot;_animation_mobile&quot;:&quot;none&quot;,&quot;_animation&quot;:&quot;fadeInRight&quot;}" data-widget_type="price-table.default">
+				<div class="elementor-widget-container">
+			
+		<div class="elementor-price-table">
+							<div class="elementor-price-table__header">
+											<h5 class="elementor-price-table__heading">PLANO VITALÍCIO</h5>
+					
+											<span class="elementor-price-table__subheading">[ OFERTA VÁLIDA APENAS HOJE ]</span>
+									</div>
+			
+			<div class="elementor-price-table__price">
+									<div class="elementor-price-table__original-price elementor-typo-excluded">R$497</div>
+								<span class="elementor-price-table__currency elementor-currency--before">R$</span>									<span class="elementor-price-table__integer-part">12x 19,78</span>
+				
+				
+				
+									<span class="elementor-price-table__period elementor-typo-excluded">ou R$197,00 à vista</span>							</div>
+
+							<ul class="elementor-price-table__features-list">
+											<li class="elementor-repeater-item-5b11508">
+							<div class="elementor-price-table__feature-inner">
+								<i aria-hidden="true" class="fas fa-check"></i>																	<span >
+										Acesso Vitalício Sem Mensalidade									</span>
+																</div>
+						</li>
+											<li class="elementor-repeater-item-7b2982b">
+							<div class="elementor-price-table__feature-inner">
+								<i aria-hidden="true" class="fas fa-check"></i>																	<span >
+										Treinamento do Zero ao Avançado									</span>
+																</div>
+						</li>
+											<li class="elementor-repeater-item-4b5a876">
+							<div class="elementor-price-table__feature-inner">
+								<i aria-hidden="true" class="fas fa-check"></i>																	<span >
+										Live de Sinais Diárias									</span>
+																</div>
+						</li>
+											<li class="elementor-repeater-item-860bec1">
+							<div class="elementor-price-table__feature-inner">
+								<i aria-hidden="true" class="fas fa-check"></i>																	<span >
+										+70 Sinais VIP por Dia									</span>
+																</div>
+						</li>
+											<li class="elementor-repeater-item-63857be">
+							<div class="elementor-price-table__feature-inner">
+								<i aria-hidden="true" class="fas fa-check"></i>																	<span >
+										Acompanhamento no Whatsapp 24hrs									</span>
+																</div>
+						</li>
+									</ul>
+			
+							<div class="elementor-price-table__footer">
+											<a class="elementor-price-table__button elementor-button elementor-size-sm elementor-animation-grow" href="http://mon.net.br/2bcyzw?src=SM197">ADQUIRIR VITALÍCIO</a>
+					
+									</div>
+					</div>
+
+					<div class="elementor-price-table__ribbon elementor-ribbon-right">
+				<div class="elementor-price-table__ribbon-inner">RECOMENDADO</div>
+			</div>
+					</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-5a813864" data-id="5a813864" data-element_type="column">
+			<div class="elementor-widget-wrap">
+									</div>
+		</div>
+							</div>
+		</section>
+				<div class="elementor-element elementor-element-158460e2 elementor-widget elementor-widget-image" data-id="158460e2" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+										<img width="810" height="40" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20810%2040'%3E%3C/svg%3E" class="attachment-full size-full" alt="" decoding="async" data-lazy-srcset="https://sinaismilionarios.com.br/wp-content/uploads/2022/12/asset-2-3.png 810w, https://sinaismilionarios.com.br/wp-content/uploads/2022/12/asset-2-3-300x15.png 300w, https://sinaismilionarios.com.br/wp-content/uploads/2022/12/asset-2-3-768x38.png 768w" data-lazy-sizes="(max-width: 810px) 100vw, 810px" data-lazy-src="https://sinaismilionarios.com.br/wp-content/uploads/2022/12/asset-2-3.png" /><noscript><img width="810" height="40" src="https://sinaismilionarios.com.br/wp-content/uploads/2022/12/asset-2-3.png" class="attachment-full size-full" alt="" decoding="async" srcset="https://sinaismilionarios.com.br/wp-content/uploads/2022/12/asset-2-3.png 810w, https://sinaismilionarios.com.br/wp-content/uploads/2022/12/asset-2-3-300x15.png 300w, https://sinaismilionarios.com.br/wp-content/uploads/2022/12/asset-2-3-768x38.png 768w" sizes="(max-width: 810px) 100vw, 810px" /></noscript>											</div>
+				</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-27fd75e9 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="27fd75e9" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;gradient&quot;,&quot;jet_parallax_layout_list&quot;:[]}">
+							<div class="elementor-background-overlay"></div>
+							<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-5bd6f89f" data-id="5bd6f89f" data-element_type="column">
+			<div class="elementor-widget-wrap">
+									</div>
+		</div>
+				<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-7c3858ca" data-id="7c3858ca" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<section class="elementor-section elementor-inner-section elementor-element elementor-element-cfec265 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="cfec265" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;gradient&quot;,&quot;jet_parallax_layout_list&quot;:[]}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-7649bcc" data-id="7649bcc" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-2494009f elementor-widget elementor-widget-heading" data-id="2494009f" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">AINDA NA DÚVIDA? NÃO SE PREOCUPE!</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-3ce44f26 elementor-widget elementor-widget-heading" data-id="3ce44f26" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h3 class="elementor-heading-title elementor-size-default">Você tem <FONT COLOR="#00C2E7">7 dias</FONT> para colocar o método à prova
+</h3>		</div>
+				</div>
+				<div class="elementor-element elementor-element-5cd7dc81 elementor-widget elementor-widget-image" data-id="5cd7dc81" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+										<img width="298" height="251" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20298%20251'%3E%3C/svg%3E" class="attachment-full size-full" alt="" decoding="async" data-lazy-src="https://sinaismilionarios.com.br/wp-content/uploads/2022/12/Garantia-7D.png" /><noscript><img width="298" height="251" src="https://sinaismilionarios.com.br/wp-content/uploads/2022/12/Garantia-7D.png" class="attachment-full size-full" alt="" decoding="async" /></noscript>											</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-b0a672a elementor-widget elementor-widget-text-editor" data-id="b0a672a" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><p><span style="font-weight: 400;">Caso os Sinais Milionários 2.0 não satisfaça suas expectativas, você tem um prazo de 7 dias de garantia incondicional, basta nos enviar um e-mail que irei devolver 100% do seu dinheiro sem te contestar uma única palavra!</span></p></div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-3d25a07e elementor-widget elementor-widget-heading" data-id="3d25a07e" data-element_type="widget" data-settings="{&quot;_animation_mobile&quot;:&quot;none&quot;}" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">VOCÊ NAO PERDE NADA!</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-133d855 elementor-mobile-align-center elementor-align-center elementor-widget elementor-widget-button" data-id="133d855" data-element_type="widget" data-widget_type="button.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-button-wrapper">
+			<a href="#planos" class="elementor-button-link elementor-button elementor-size-sm" role="button">
+						<span class="elementor-button-content-wrapper">
+						<span class="elementor-button-text">ADQUIRIR COM GARANTIA</span>
+		</span>
+					</a>
+		</div>
+				</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-7e7cf7dc" data-id="7e7cf7dc" data-element_type="column">
+			<div class="elementor-widget-wrap">
+									</div>
+		</div>
+							</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-696ef34b elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="696ef34b" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;gradient&quot;,&quot;jet_parallax_layout_list&quot;:[]}">
+							<div class="elementor-background-overlay"></div>
+							<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-1ff48ad6" data-id="1ff48ad6" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-2ada51cd elementor-view-default elementor-widget elementor-widget-icon" data-id="2ada51cd" data-element_type="widget" data-widget_type="icon.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-icon-wrapper">
+			<div class="elementor-icon">
+			<svg xmlns="http://www.w3.org/2000/svg" id="Capa_1" height="512" viewBox="0 0 512 512" width="512"><g><path d="m508.331 305.171-32.338-37.279c23.308-29.158 36.007-65.208 36.007-102.892 0-90.981-74.018-165-165-165s-165 74.019-165 165 74.019 165 165 165h150c5.874 0 11.208-3.429 13.646-8.772 2.439-5.344 1.534-11.619-2.315-16.057zm-161.331-38.171c-8.284 0-15-6.716-15-15s6.716-15 15-15 15 6.716 15 15-6.715 15-15 15zm41.733-107.839c-7.309 7.698-16.62 13.179-26.732 15.925v31.5c0 8.284-6.716 15-15 15s-15-6.716-15-15v-44.491c0-8.284 6.716-15 15-15 7.623 0 14.717-3.051 19.977-8.59 5.254-5.534 7.929-12.794 7.532-20.443-.743-14.321-12.574-25.767-26.933-26.056-.188-.004-.376-.006-.564-.006-13.715 0-25.396 10.091-27.293 23.687-.177 1.266-.266 2.565-.266 3.861 0 8.284-6.716 15-15 15s-15-6.716-15-15c0-2.678.187-5.371.554-8.007 4.022-28.823 29.064-50.126 58.173-49.529 30.009.605 54.734 24.542 56.289 54.495.827 15.946-4.762 31.095-15.737 42.654z"></path><path d="m215 332h-100c-8.284 0-15-6.716-15-15s6.716-15 15-15h93.394c-30.995-31.355-51.468-73.134-55.604-119.548-85.301 6.27-152.79 77.674-152.79 164.548 0 37.684 12.699 73.733 36.007 102.892l-32.338 37.279c-3.849 4.438-4.754 10.713-2.315 16.057 2.439 5.343 7.772 8.772 13.646 8.772h150c86.875 0 158.278-67.489 164.548-152.79-37.332-3.327-71.662-17.228-99.987-38.665-1.595 6.57-7.5 11.455-14.561 11.455zm0 60h-100c-8.284 0-15-6.716-15-15s6.716-15 15-15h100c8.284 0 15 6.716 15 15s-6.716 15-15 15z"></path></g></svg>			</div>
+		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-1ddd11f8 elementor-widget elementor-widget-heading" data-id="1ddd11f8" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h3 class="elementor-heading-title elementor-size-default">DÚVIDAS FREQUENTES</h3>		</div>
+				</div>
+				<div class="elementor-element elementor-element-5b6552bb elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-id="5b6552bb" data-element_type="widget" data-widget_type="divider.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-divider">
+			<span class="elementor-divider-separator">
+						</span>
+		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-7068c2b0 elementor-widget elementor-widget-toggle" data-id="7068c2b0" data-element_type="widget" data-widget_type="toggle.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-toggle" role="tablist">
+							<div class="elementor-toggle-item">
+					<div id="elementor-tab-title-1881" class="elementor-tab-title" data-tab="1" role="tab" aria-controls="elementor-tab-content-1881" aria-expanded="false">
+												<span class="elementor-toggle-icon elementor-toggle-icon-left" aria-hidden="true">
+															<span class="elementor-toggle-icon-closed"><i class="fas fa-caret-right"></i></span>
+								<span class="elementor-toggle-icon-opened"><i class="elementor-toggle-icon-opened fas fa-caret-up"></i></span>
+													</span>
+												<a href="" class="elementor-toggle-title">Meus dados estão protegidos nesse site?</a>
+					</div>
+					<div id="elementor-tab-content-1881" class="elementor-tab-content elementor-clearfix" data-tab="1" role="tabpanel" aria-labelledby="elementor-tab-title-1881"><p><span style="font-weight: 400;">Sim. Nosso site tem segurança SSL de ponta a ponta, ou seja, todas as informações compartilhadas nesse site são criptografadas para impossibilitar que invasores tenham acesso.</span></p></div>
+				</div>
+							<div class="elementor-toggle-item">
+					<div id="elementor-tab-title-1882" class="elementor-tab-title" data-tab="2" role="tab" aria-controls="elementor-tab-content-1882" aria-expanded="false">
+												<span class="elementor-toggle-icon elementor-toggle-icon-left" aria-hidden="true">
+															<span class="elementor-toggle-icon-closed"><i class="fas fa-caret-right"></i></span>
+								<span class="elementor-toggle-icon-opened"><i class="elementor-toggle-icon-opened fas fa-caret-up"></i></span>
+													</span>
+												<a href="" class="elementor-toggle-title">Quais as formas de pagamento?</a>
+					</div>
+					<div id="elementor-tab-content-1882" class="elementor-tab-content elementor-clearfix" data-tab="2" role="tabpanel" aria-labelledby="elementor-tab-title-1882"><p><span style="font-weight: 400;">As formas disponíveis de pagamento são boleto bancário, pix ou cartão de crédito. Lembrando que comprando através do cartão de crédito ou pix você tem acesso imediato aos Sinais </span><span style="font-weight: 400;">Milionários 2.0</span><span style="font-weight: 400;">. No boleto já é necessário de 1 a 2 dias para a compensação.</span></p></div>
+				</div>
+							<div class="elementor-toggle-item">
+					<div id="elementor-tab-title-1883" class="elementor-tab-title" data-tab="3" role="tab" aria-controls="elementor-tab-content-1883" aria-expanded="false">
+												<span class="elementor-toggle-icon elementor-toggle-icon-left" aria-hidden="true">
+															<span class="elementor-toggle-icon-closed"><i class="fas fa-caret-right"></i></span>
+								<span class="elementor-toggle-icon-opened"><i class="elementor-toggle-icon-opened fas fa-caret-up"></i></span>
+													</span>
+												<a href="" class="elementor-toggle-title">Como vou receber acesso?</a>
+					</div>
+					<div id="elementor-tab-content-1883" class="elementor-tab-content elementor-clearfix" data-tab="3" role="tabpanel" aria-labelledby="elementor-tab-title-1883"><p><span style="font-weight: 400;">Você receberá o acesso ao conteúdo dos Sinais Milionários 2.0 pelo seu e-mail, que é colocado no momento que você for realizar a compra.</span></p></div>
+				</div>
+							<div class="elementor-toggle-item">
+					<div id="elementor-tab-title-1884" class="elementor-tab-title" data-tab="4" role="tab" aria-controls="elementor-tab-content-1884" aria-expanded="false">
+												<span class="elementor-toggle-icon elementor-toggle-icon-left" aria-hidden="true">
+															<span class="elementor-toggle-icon-closed"><i class="fas fa-caret-right"></i></span>
+								<span class="elementor-toggle-icon-opened"><i class="elementor-toggle-icon-opened fas fa-caret-up"></i></span>
+													</span>
+												<a href="" class="elementor-toggle-title">E se eu não gostar do que irei aprender?</a>
+					</div>
+					<div id="elementor-tab-content-1884" class="elementor-tab-content elementor-clearfix" data-tab="4" role="tabpanel" aria-labelledby="elementor-tab-title-1884"><p><span style="font-weight: 400;">Te darei uma garantia incondicional de 7 dias. </span><span style="font-weight: 400;">Isso nunca aconteceu, mas se você perceber que o que está aprendendo não é valioso, basta você me enviar um e-mail e devolvo 100% do seu dinheiro sem te contestar uma única palavra.</span></p></div>
+				</div>
+							<div class="elementor-toggle-item">
+					<div id="elementor-tab-title-1885" class="elementor-tab-title" data-tab="5" role="tab" aria-controls="elementor-tab-content-1885" aria-expanded="false">
+												<span class="elementor-toggle-icon elementor-toggle-icon-left" aria-hidden="true">
+															<span class="elementor-toggle-icon-closed"><i class="fas fa-caret-right"></i></span>
+								<span class="elementor-toggle-icon-opened"><i class="elementor-toggle-icon-opened fas fa-caret-up"></i></span>
+													</span>
+												<a href="" class="elementor-toggle-title">E se eu tiver dúvidas?</a>
+					</div>
+					<div id="elementor-tab-content-1885" class="elementor-tab-content elementor-clearfix" data-tab="5" role="tabpanel" aria-labelledby="elementor-tab-title-1885"><p><span style="font-weight: 400;">Temos um suporte disponível para tirar todas as suas dúvidas diretamente pelo whastapp.</span></p></div>
+				</div>
+							<div class="elementor-toggle-item">
+					<div id="elementor-tab-title-1886" class="elementor-tab-title" data-tab="6" role="tab" aria-controls="elementor-tab-content-1886" aria-expanded="false">
+												<span class="elementor-toggle-icon elementor-toggle-icon-left" aria-hidden="true">
+															<span class="elementor-toggle-icon-closed"><i class="fas fa-caret-right"></i></span>
+								<span class="elementor-toggle-icon-opened"><i class="elementor-toggle-icon-opened fas fa-caret-up"></i></span>
+													</span>
+												<a href="" class="elementor-toggle-title">Por quanto tempo terei acesso?</a>
+					</div>
+					<div id="elementor-tab-content-1886" class="elementor-tab-content elementor-clearfix" data-tab="6" role="tabpanel" aria-labelledby="elementor-tab-title-1886"><p><span style="font-weight: 400;">Você terá acesso por tempo Vitalício ao conteúdo dos Sinais Milionários 2.0. Porém a Sala VIP depende do Plano Adquirido, sendo Mensal ou Vitalício. </span></p></div>
+				</div>
+							<div class="elementor-toggle-item">
+					<div id="elementor-tab-title-1887" class="elementor-tab-title" data-tab="7" role="tab" aria-controls="elementor-tab-content-1887" aria-expanded="false">
+												<span class="elementor-toggle-icon elementor-toggle-icon-left" aria-hidden="true">
+															<span class="elementor-toggle-icon-closed"><i class="fas fa-caret-right"></i></span>
+								<span class="elementor-toggle-icon-opened"><i class="elementor-toggle-icon-opened fas fa-caret-up"></i></span>
+													</span>
+												<a href="" class="elementor-toggle-title">O Retorno do investimento é garantido ?</a>
+					</div>
+					<div id="elementor-tab-content-1887" class="elementor-tab-content elementor-clearfix" data-tab="7" role="tabpanel" aria-labelledby="elementor-tab-title-1887"><p>Os resultados referente aos nossos serviços foram testados, avaliados e comprovados por vários de nossos seguidores. NÃO garantimos o retorno igual para todos, resultados passados não são garantia de resultados futuros, estes variam de pessoa para pessoa dependendo de diversos fatores individuais.</p><p>As informações fornecidas neste site destinam-se ao seu conhecimento geral e não garantimos um resultado específico e nem um valor exato de lucro, todo resultado será de inteira responsabilidade da pessoa que faz as operações, nós não ficamos sob custódia dos valores de ninguém.</p></div>
+				</div>
+					</div>
+				</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-62cf32ba elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="62cf32ba" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;gradient&quot;,&quot;jet_parallax_layout_list&quot;:[]}">
+							<div class="elementor-background-overlay"></div>
+							<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-16eb7387" data-id="16eb7387" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-1ba80b18 elementor-widget elementor-widget-image" data-id="1ba80b18" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+										<img width="832" height="220" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20832%20220'%3E%3C/svg%3E" class="attachment-full size-full" alt="" decoding="async" data-lazy-srcset="https://sinaismilionarios.com.br/wp-content/uploads/2022/12/logo-3.png 832w, https://sinaismilionarios.com.br/wp-content/uploads/2022/12/logo-3-300x79.png 300w, https://sinaismilionarios.com.br/wp-content/uploads/2022/12/logo-3-768x203.png 768w" data-lazy-sizes="(max-width: 832px) 100vw, 832px" data-lazy-src="https://sinaismilionarios.com.br/wp-content/uploads/2022/12/logo-3.png" /><noscript><img width="832" height="220" src="https://sinaismilionarios.com.br/wp-content/uploads/2022/12/logo-3.png" class="attachment-full size-full" alt="" decoding="async" srcset="https://sinaismilionarios.com.br/wp-content/uploads/2022/12/logo-3.png 832w, https://sinaismilionarios.com.br/wp-content/uploads/2022/12/logo-3-300x79.png 300w, https://sinaismilionarios.com.br/wp-content/uploads/2022/12/logo-3-768x203.png 768w" sizes="(max-width: 832px) 100vw, 832px" /></noscript>											</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-58e70eea elementor-widget elementor-widget-heading" data-id="58e70eea" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">2022© Todos os Direitos Reservados</h2>		</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+						</div>
+					</div>
+		
+		<style id="skip-link-styles">
+		.skip-link.screen-reader-text {
+			border: 0;
+			clip: rect(1px,1px,1px,1px);
+			clip-path: inset(50%);
+			height: 1px;
+			margin: -1px;
+			overflow: hidden;
+			padding: 0;
+			position: absolute !important;
+			width: 1px;
+			word-wrap: normal !important;
+		}
+
+		.skip-link.screen-reader-text:focus {
+			background-color: #eee;
+			clip: auto !important;
+			clip-path: none;
+			color: #444;
+			display: block;
+			font-size: 1em;
+			height: auto;
+			left: 5px;
+			line-height: normal;
+			padding: 15px 23px 14px;
+			text-decoration: none;
+			top: 5px;
+			width: auto;
+			z-index: 100000;
+		}
+	</style>
+		<script type="rocketlazyloadscript">
+	( function() {
+		var skipLinkTarget = document.querySelector( 'main' ),
+			sibling,
+			skipLinkTargetID,
+			skipLink;
+
+		// Early exit if a skip-link target can't be located.
+		if ( ! skipLinkTarget ) {
+			return;
+		}
+
+		// Get the site wrapper.
+		// The skip-link will be injected in the beginning of it.
+		sibling = document.querySelector( '.wp-site-blocks' );
+
+		// Early exit if the root element was not found.
+		if ( ! sibling ) {
+			return;
+		}
+
+		// Get the skip-link target's ID, and generate one if it doesn't exist.
+		skipLinkTargetID = skipLinkTarget.id;
+		if ( ! skipLinkTargetID ) {
+			skipLinkTargetID = 'wp--skip-link--target';
+			skipLinkTarget.id = skipLinkTargetID;
+		}
+
+		// Create the skip link.
+		skipLink = document.createElement( 'a' );
+		skipLink.classList.add( 'skip-link', 'screen-reader-text' );
+		skipLink.href = '#' + skipLinkTargetID;
+		skipLink.innerHTML = 'Saltar para o conteúdo';
+
+		// Inject the skip link.
+		sibling.parentElement.insertBefore( skipLink, sibling );
+	}() );
+	</script>
+	
+<div class="joinchat joinchat--right" data-settings='{"telephone":"5521967469749","mobile_only":false,"button_delay":3,"whatsapp_web":false,"qr":false,"message_views":2,"message_delay":10,"message_badge":false,"message_send":"Oi Larissa! Quero saber mais sobre os Sinais Milionários 2.0!","message_hash":"1745f967"}'>
+	<div class="joinchat__button">
+		<div class="joinchat__button__open"></div>
+											<div class="joinchat__button__sendtext">Fale Comigo!</div>
+						<svg class="joinchat__button__send" width="60" height="60" viewbox="0 0 400 400" stroke-linecap="round" stroke-width="33">
+				<path class="joinchat_svg__plain" d="M168.83 200.504H79.218L33.04 44.284a1 1 0 0 1 1.386-1.188L365.083 199.04a1 1 0 0 1 .003 1.808L34.432 357.903a1 1 0 0 1-1.388-1.187l29.42-99.427"/>
+				<path class="joinchat_svg__chat" d="M318.087 318.087c-52.982 52.982-132.708 62.922-195.725 29.82l-80.449 10.18 10.358-80.112C18.956 214.905 28.836 134.99 81.913 81.913c65.218-65.217 170.956-65.217 236.174 0 42.661 42.661 57.416 102.661 44.265 157.316"/>
+			</svg>
+										</div>
+			<div class="joinchat__box">
+			<div class="joinchat__header">
+									<svg class="joinchat__wa" width="120" height="28" viewBox="0 0 120 28"><title>WhatsApp</title><path d="M117.2 17c0 .4-.2.7-.4 1-.1.3-.4.5-.7.7l-1 .2c-.5 0-.9 0-1.2-.2l-.7-.7a3 3 0 0 1-.4-1 5.4 5.4 0 0 1 0-2.3c0-.4.2-.7.4-1l.7-.7a2 2 0 0 1 1.1-.3 2 2 0 0 1 1.8 1l.4 1a5.3 5.3 0 0 1 0 2.3zm2.5-3c-.1-.7-.4-1.3-.8-1.7a4 4 0 0 0-1.3-1.2c-.6-.3-1.3-.4-2-.4-.6 0-1.2.1-1.7.4a3 3 0 0 0-1.2 1.1V11H110v13h2.7v-4.5c.4.4.8.8 1.3 1 .5.3 1 .4 1.6.4a4 4 0 0 0 3.2-1.5c.4-.5.7-1 .8-1.6.2-.6.3-1.2.3-1.9s0-1.3-.3-2zm-13.1 3c0 .4-.2.7-.4 1l-.7.7-1.1.2c-.4 0-.8 0-1-.2-.4-.2-.6-.4-.8-.7a3 3 0 0 1-.4-1 5.4 5.4 0 0 1 0-2.3c0-.4.2-.7.4-1 .1-.3.4-.5.7-.7a2 2 0 0 1 1-.3 2 2 0 0 1 1.9 1l.4 1a5.4 5.4 0 0 1 0 2.3zm1.7-4.7a4 4 0 0 0-3.3-1.6c-.6 0-1.2.1-1.7.4a3 3 0 0 0-1.2 1.1V11h-2.6v13h2.7v-4.5c.3.4.7.8 1.2 1 .6.3 1.1.4 1.7.4a4 4 0 0 0 3.2-1.5c.4-.5.6-1 .8-1.6.2-.6.3-1.2.3-1.9s-.1-1.3-.3-2c-.2-.6-.4-1.2-.8-1.6zm-17.5 3.2l1.7-5 1.7 5h-3.4zm.2-8.2l-5 13.4h3l1-3h5l1 3h3L94 7.3h-3zm-5.3 9.1l-.6-.8-1-.5a11.6 11.6 0 0 0-2.3-.5l-1-.3a2 2 0 0 1-.6-.3.7.7 0 0 1-.3-.6c0-.2 0-.4.2-.5l.3-.3h.5l.5-.1c.5 0 .9 0 1.2.3.4.1.6.5.6 1h2.5c0-.6-.2-1.1-.4-1.5a3 3 0 0 0-1-1 4 4 0 0 0-1.3-.5 7.7 7.7 0 0 0-3 0c-.6.1-1 .3-1.4.5l-1 1a3 3 0 0 0-.4 1.5 2 2 0 0 0 1 1.8l1 .5 1.1.3 2.2.6c.6.2.8.5.8 1l-.1.5-.4.4a2 2 0 0 1-.6.2 2.8 2.8 0 0 1-1.4 0 2 2 0 0 1-.6-.3l-.5-.5-.2-.8H77c0 .7.2 1.2.5 1.6.2.5.6.8 1 1 .4.3.9.5 1.4.6a8 8 0 0 0 3.3 0c.5 0 1-.2 1.4-.5a3 3 0 0 0 1-1c.3-.5.4-1 .4-1.6 0-.5 0-.9-.3-1.2zM74.7 8h-2.6v3h-1.7v1.7h1.7v5.8c0 .5 0 .9.2 1.2l.7.7 1 .3a7.8 7.8 0 0 0 2 0h.7v-2.1a3.4 3.4 0 0 1-.8 0l-1-.1-.2-1v-4.8h2V11h-2V8zm-7.6 9v.5l-.3.8-.7.6c-.2.2-.7.2-1.2.2h-.6l-.5-.2a1 1 0 0 1-.4-.4l-.1-.6.1-.6.4-.4.5-.3a4.8 4.8 0 0 1 1.2-.2 8.3 8.3 0 0 0 1.2-.2l.4-.3v1zm2.6 1.5v-5c0-.6 0-1.1-.3-1.5l-1-.8-1.4-.4a10.9 10.9 0 0 0-3.1 0l-1.5.6c-.4.2-.7.6-1 1a3 3 0 0 0-.5 1.5h2.7c0-.5.2-.9.5-1a2 2 0 0 1 1.3-.4h.6l.6.2.3.4.2.7c0 .3 0 .5-.3.6-.1.2-.4.3-.7.4l-1 .1a21.9 21.9 0 0 0-2.4.4l-1 .5c-.3.2-.6.5-.8.9-.2.3-.3.8-.3 1.3s.1 1 .3 1.3c.1.4.4.7.7 1l1 .4c.4.2.9.2 1.3.2a6 6 0 0 0 1.8-.2c.6-.2 1-.5 1.5-1a4 4 0 0 0 .2 1H70l-.3-1v-1.2zm-11-6.7c-.2-.4-.6-.6-1-.8-.5-.2-1-.3-1.8-.3-.5 0-1 .1-1.5.4a3 3 0 0 0-1.3 1.2v-5h-2.7v13.4H53v-5.1c0-1 .2-1.7.5-2.2.3-.4.9-.6 1.6-.6.6 0 1 .2 1.3.6.3.4.4 1 .4 1.8v5.5h2.7v-6c0-.6 0-1.2-.2-1.6 0-.5-.3-1-.5-1.3zm-14 4.7l-2.3-9.2h-2.8l-2.3 9-2.2-9h-3l3.6 13.4h3l2.2-9.2 2.3 9.2h3l3.6-13.4h-3l-2.1 9.2zm-24.5.2L18 15.6c-.3-.1-.6-.2-.8.2A20 20 0 0 1 16 17c-.2.2-.4.3-.7.1-.4-.2-1.5-.5-2.8-1.7-1-1-1.7-2-2-2.4-.1-.4 0-.5.2-.7l.5-.6.4-.6v-.6L10.4 8c-.3-.6-.6-.5-.8-.6H9c-.2 0-.6.1-.9.5C7.8 8.2 7 9 7 10.7c0 1.7 1.3 3.4 1.4 3.6.2.3 2.5 3.7 6 5.2l1.9.8c.8.2 1.6.2 2.2.1.6-.1 2-.8 2.3-1.6.3-.9.3-1.5.2-1.7l-.7-.4zM14 25.3c-2 0-4-.5-5.8-1.6l-.4-.2-4.4 1.1 1.2-4.2-.3-.5A11.5 11.5 0 0 1 22.1 5.7 11.5 11.5 0 0 1 14 25.3zM14 0A13.8 13.8 0 0 0 2 20.7L0 28l7.3-2A13.8 13.8 0 1 0 14 0z"/></svg>
+								<div class="joinchat__close" aria-label="Close"></div>
+			</div>
+			<div class="joinchat__box__scroll">
+				<div class="joinchat__box__content">
+					<div class="joinchat__message">Olá, sou a Larissa Suporte!<br>Posso te ajudar com alguma dúvida sobre os Sinais Milionários 2.0 ?</div>				</div>
+			</div>
+		</div>
+		<svg style="width:0;height:0;position:absolute"><defs><clipPath id="joinchat__message__peak"><path d="M17 25V0C17 12.877 6.082 14.9 1.031 15.91c-1.559.31-1.179 2.272.004 2.272C9.609 18.182 17 18.088 17 25z"/></clipPath></defs></svg>
+	</div>
+<link rel='stylesheet' id='elementor-gallery-css' href='https://sinaismilionarios.com.br/wp-content/plugins/elementor/assets/lib/e-gallery/css/e-gallery.min.css?ver=1.2.0' media='all' />
+<script type="rocketlazyloadscript" id='rocket-browser-checker-js-after'>
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+</script>
+<script id='rocket-preload-links-js-extra'>
+var RocketPreloadLinksConfig = {"excludeUris":"\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$|\/(?:.+\/)?embed\/|\/(index\\.php\/)?wp\\-json(\/.*|$)|\/wp-admin\/|\/logout\/|\/wp-login.php|\/refer\/|\/go\/|\/recommend\/|\/recommends\/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https:\/\/sinaismilionarios.com.br","onHoverDelay":"100","rateThrottle":"3"};
+</script>
+<script type="rocketlazyloadscript" id='rocket-preload-links-js-after'>
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+</script>
+<script type="rocketlazyloadscript" src='https://sinaismilionarios.com.br/wp-content/plugins/creame-whatsapp-me/public/js/joinchat.min.js?ver=4.5.13' id='joinchat-js' defer></script>
+<script type="rocketlazyloadscript" src='https://sinaismilionarios.com.br/wp-content/plugins/elementor/assets/lib/e-gallery/js/e-gallery.min.js?ver=1.2.0' id='elementor-gallery-js' defer></script>
+<script type="rocketlazyloadscript" src='https://sinaismilionarios.com.br/wp-content/plugins/elementor/assets/js/webpack.runtime.min.js?ver=3.1.4' id='elementor-webpack-runtime-js' defer></script>
+<script type="rocketlazyloadscript" src='https://sinaismilionarios.com.br/wp-content/plugins/elementor/assets/js/frontend-modules.min.js?ver=3.1.4' id='elementor-frontend-modules-js' defer></script>
+<script type="rocketlazyloadscript" src='https://sinaismilionarios.com.br/wp-includes/js/jquery/ui/core.min.js?ver=1.13.2' id='jquery-ui-core-js' defer></script>
+<script type="rocketlazyloadscript" src='https://sinaismilionarios.com.br/wp-content/plugins/elementor/assets/lib/dialog/dialog.min.js?ver=4.8.1' id='elementor-dialog-js' defer></script>
+<script type="rocketlazyloadscript" src='https://sinaismilionarios.com.br/wp-content/plugins/elementor/assets/lib/waypoints/waypoints.min.js?ver=4.0.2' id='elementor-waypoints-js' defer></script>
+<script type="rocketlazyloadscript" src='https://sinaismilionarios.com.br/wp-content/plugins/elementor/assets/lib/share-link/share-link.min.js?ver=3.1.4' id='share-link-js' defer></script>
+<script type="rocketlazyloadscript" src='https://sinaismilionarios.com.br/wp-content/plugins/elementor/assets/lib/swiper/swiper.min.js?ver=5.3.6' id='swiper-js' defer></script>
+<script type="rocketlazyloadscript" id='elementor-frontend-js-before'>
+var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false,"isScriptDebug":false,"isImprovedAssetsLoading":false},"i18n":{"shareOnFacebook":"Share on Facebook","shareOnTwitter":"Share on Twitter","pinIt":"Pin it","download":"Download","downloadImage":"Download image","fullscreen":"Fullscreen","zoom":"Zoom","share":"Share","playVideo":"Reproduzir v\u00eddeo","previous":"Anterior","next":"Seguinte","close":"Fechar"},"is_rtl":false,"breakpoints":{"xs":0,"sm":480,"md":768,"lg":1025,"xl":1440,"xxl":1600},"version":"3.1.4","is_static":false,"experimentalFeatures":{"e_dom_optimization":true,"a11y_improvements":true,"landing-pages":true,"form-submissions":true},"urls":{"assets":"https:\/\/sinaismilionarios.com.br\/wp-content\/plugins\/elementor\/assets\/"},"settings":{"page":[],"editorPreferences":[]},"kit":{"global_image_lightbox":"yes","lightbox_enable_counter":"yes","lightbox_enable_fullscreen":"yes","lightbox_enable_zoom":"yes","lightbox_enable_share":"yes","lightbox_title_src":"title","lightbox_description_src":"description"},"post":{"id":43,"title":"Sinais%20Milion%C3%A1rios%202.0%20%7C%20Promocional","excerpt":"","featuredImage":false}};
+</script>
+<script type="rocketlazyloadscript" src='https://sinaismilionarios.com.br/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=3.1.4' id='elementor-frontend-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" src='https://sinaismilionarios.com.br/wp-content/cache/min/1/wp-content/plugins/events-tracker-for-elementor/frontend/js/app.js?ver=1686855383' id='events_tracker_for_elementor_app-js' defer></script>
+<script type="rocketlazyloadscript" src='https://sinaismilionarios.com.br/wp-content/plugins/elementor-pro/assets/js/webpack-pro.runtime.min.js?ver=3.2.1' id='elementor-pro-webpack-runtime-js' defer></script>
+<script type="rocketlazyloadscript" src='https://sinaismilionarios.com.br/wp-content/plugins/elementor-pro/assets/lib/sticky/jquery.sticky.min.js?ver=3.2.1' id='elementor-sticky-js' defer></script>
+<script type="rocketlazyloadscript" id='elementor-pro-frontend-js-before'>
+var ElementorProFrontendConfig = {"ajaxurl":"https:\/\/sinaismilionarios.com.br\/wp-admin\/admin-ajax.php","nonce":"4b6b859dbf","urls":{"assets":"https:\/\/sinaismilionarios.com.br\/wp-content\/plugins\/elementor-pro\/assets\/"},"i18n":{"toc_no_headings_found":"No headings were found on this page."},"shareButtonsNetworks":{"facebook":{"title":"Facebook","has_counter":true},"twitter":{"title":"Twitter"},"google":{"title":"Google+","has_counter":true},"linkedin":{"title":"LinkedIn","has_counter":true},"pinterest":{"title":"Pinterest","has_counter":true},"reddit":{"title":"Reddit","has_counter":true},"vk":{"title":"VK","has_counter":true},"odnoklassniki":{"title":"OK","has_counter":true},"tumblr":{"title":"Tumblr"},"digg":{"title":"Digg"},"skype":{"title":"Skype"},"stumbleupon":{"title":"StumbleUpon","has_counter":true},"mix":{"title":"Mix"},"telegram":{"title":"Telegram"},"pocket":{"title":"Pocket","has_counter":true},"xing":{"title":"XING","has_counter":true},"whatsapp":{"title":"WhatsApp"},"email":{"title":"Email"},"print":{"title":"Print"}},"facebook_sdk":{"lang":"pt_PT","app_id":""},"lottie":{"defaultAnimationUrl":"https:\/\/sinaismilionarios.com.br\/wp-content\/plugins\/elementor-pro\/modules\/lottie\/assets\/animations\/default.json"}};
+</script>
+<script type="rocketlazyloadscript" src='https://sinaismilionarios.com.br/wp-content/plugins/elementor-pro/assets/js/frontend.min.js?ver=3.2.1' id='elementor-pro-frontend-js' defer></script>
+<script type="rocketlazyloadscript" src='https://sinaismilionarios.com.br/wp-content/plugins/elementor-pro/assets/js/preloaded-elements-handlers.min.js?ver=3.2.1' id='pro-preloaded-elements-handlers-js' defer></script>
+<script id='jet-elements-js-extra'>
+var jetElements = {"ajaxUrl":"https:\/\/sinaismilionarios.com.br\/wp-admin\/admin-ajax.php","isMobile":"false","templateApiUrl":"https:\/\/sinaismilionarios.com.br\/wp-json\/jet-elements-api\/v1\/elementor-template","devMode":"false","messages":{"invalidMail":"Please specify a valid e-mail"}};
+</script>
+<script type="rocketlazyloadscript" src='https://sinaismilionarios.com.br/wp-content/plugins/jet-elements/assets/js/jet-elements.min.js?ver=2.6.4' id='jet-elements-js' defer></script>
+<script type="rocketlazyloadscript" src='https://sinaismilionarios.com.br/wp-content/plugins/elementor/assets/js/preloaded-elements-handlers.min.js?ver=3.1.4' id='preloaded-elements-handlers-js' defer></script>
+<script>window.lazyLoadOptions=[{elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}},{elements_selector:".rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,}];window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://sinaismilionarios.com.br/wp-content/plugins/wp-rocket/assets/js/lazyload/17.5/lazyload.min.js"></script><script>function lazyLoadThumb(e){var t='<img data-lazy-src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"><noscript><img src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"></noscript>',a='<button class="play" aria-label="play Youtube video"></button>';return t.replace("ID",e)+a}function lazyLoadYoutubeIframe(){var e=document.createElement("iframe"),t="ID?autoplay=1";t+=0===this.parentNode.dataset.query.length?'':'&'+this.parentNode.dataset.query;e.setAttribute("src",t.replace("ID",this.parentNode.dataset.src)),e.setAttribute("frameborder","0"),e.setAttribute("allowfullscreen","1"),e.setAttribute("allow", "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"),this.parentNode.parentNode.replaceChild(e,this.parentNode)}document.addEventListener("DOMContentLoaded",function(){var e,t,p,a=document.getElementsByClassName("rll-youtube-player");for(t=0;t<a.length;t++)e=document.createElement("div"),e.setAttribute("data-id",a[t].dataset.id),e.setAttribute("data-query", a[t].dataset.query),e.setAttribute("data-src", a[t].dataset.src),e.innerHTML=lazyLoadThumb(a[t].dataset.id),a[t].appendChild(e),p=e.querySelector('.play'),p.onclick=lazyLoadYoutubeIframe});</script>	<script>class RocketElementorAnimation{constructor(){this.deviceMode=document.createElement("span"),this.deviceMode.id="elementor-device-mode",this.deviceMode.setAttribute("class","elementor-screen-only"),document.body.appendChild(this.deviceMode)}_detectAnimations(){let t=getComputedStyle(this.deviceMode,":after").content.replace(/"/g,"");this.animationSettingKeys=this._listAnimationSettingsKeys(t),document.querySelectorAll(".elementor-invisible[data-settings]").forEach(t=>{const e=t.getBoundingClientRect();if(e.bottom>=0&&e.top<=window.innerHeight)try{this._animateElement(t)}catch(t){}})}_animateElement(t){const e=JSON.parse(t.dataset.settings),i=e._animation_delay||e.animation_delay||0,n=e[this.animationSettingKeys.find(t=>e[t])];if("none"===n)return void t.classList.remove("elementor-invisible");t.classList.remove(n),this.currentAnimation&&t.classList.remove(this.currentAnimation),this.currentAnimation=n;let s=setTimeout(()=>{t.classList.remove("elementor-invisible"),t.classList.add("animated",n),this._removeAnimationSettings(t,e)},i);window.addEventListener("rocket-startLoading",function(){clearTimeout(s)})}_listAnimationSettingsKeys(t="mobile"){const e=[""];switch(t){case"mobile":e.unshift("_mobile");case"tablet":e.unshift("_tablet");case"desktop":e.unshift("_desktop")}const i=[];return["animation","_animation"].forEach(t=>{e.forEach(e=>{i.push(t+e)})}),i}_removeAnimationSettings(t,e){this._listAnimationSettingsKeys().forEach(t=>delete e[t]),t.dataset.settings=JSON.stringify(e)}static run(){const t=new RocketElementorAnimation;requestAnimationFrame(t._detectAnimations.bind(t))}}document.addEventListener("DOMContentLoaded",RocketElementorAnimation.run);</script></body>
+</html>
+
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me - Debug: cached@1687997739 -->
